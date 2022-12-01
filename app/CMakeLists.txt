@@ -172,6 +172,10 @@ if(TEST_PSA_API AND NOT PSA_ARCH_TESTS_BINARY_PATH)
         )
     endif()
 
+    if(NOT ${TFM_PSA_TEST_CUSTOM_INCLUDE_DIR} STREQUAL "")
+        list(APPEND PSA_INCLUDE_PATHS ${TFM_PSA_TEST_CUSTOM_INCLUDE_DIR})
+    endif()
+
     if(NOT SP_HEAP_MEM_SUPP)
         set(SP_HEAP_MEM_SUPP 0)
     endif()
